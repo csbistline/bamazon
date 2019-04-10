@@ -139,14 +139,10 @@ function addInventory() {
         }
     ]).then(function (answers) {
         connection.query(
-            "UPDATE products SET ? WHERE ?",
+            "UPDATE products SET stock_quantity = stock_quantity + ? WHERE id = ?",
             [
-                {
-                    stock_quantity: answers.quantity
-                },
-                {
-                    id: answers.id
-                }
+                answers.quantity,
+                answers.id
             ],
             function (err, res) {
                 if (err) throw err;
