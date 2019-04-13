@@ -129,7 +129,7 @@ function addInventory() {
         {
             name: "quantity",
             type: "input",
-            message: "Enter new quantity: ",
+            message: "Enter quantity to add: ",
             validate: function (value) {
                 if (isNaN(value) === false) {
                     return true;
